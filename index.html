@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card-product</title>
+</head>
+<style>
+    body{
+        background-color: antiquewhite;
+    }
+    .shirts{
+        width: 250px;
+        border: 2px double black;
+        background-color: rgb(190, 187, 187);
+        border-radius: 30px;
+        margin: 20px auto;
+    }
+    .product{
+        height: 150px;
+        display: block;
+        margin: 20px auto;
+    }
+    .title{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .product-price{
+        margin: 10px;
+        padding: 0;
+        text-align: center;
+    }
+    .buy-now{
+        background-color: rgb(51, 49, 49);
+        color: wheat;
+        border: none;
+        padding: 5px 20px;
+        display: block;
+        margin: 10px auto;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    .shape{
+        height: 20px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    .buy-now:hover{
+        box-shadow: 1px 2px 7px 2px rgb(35, 33, 31);
+        transition: 0.5s;
+    }
+   
+    .head{
+        text-align: center;
+    }
+    .container-quality{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 10px 0;
+    }
+   
+</style>
+<body>
+    <h1 class="head">👕Shirt-Shop</h1>
+    <div class="shirts" id="card">
+        <img src="t-shirt.png" alt="shirt" class="product"/>
+        <h2 class="title">Plain Classic Fit  T-Shirt</h2>
+        <p class="product-price">Price:₹600/-</p>
+        <div class="container-quality">
+            <img src="add.png" alt="" class="shape" onclick="inc()"/>
+            <span id="quantity">1</span>
+            <img src="minus.png" alt=""class="shape" onclick="dec()">
+        </div>
+        <button onclick="changeColor()" class="buy-now">Buy Now</button>
+    </div>
+    <script>
+        const quantityelement = document.getElementById('quantity'); 
+        function inc(){
+          let quantity = parseInt(quantityelement.innerText);
+          quantityelement.innerText = ++quantity;
+        }
+        function dec(){
+            let quantity = parseInt(quantityelement.innerText);
+            if(quantity>1){
+                quantityelement.innerText = --quantity;
+            }
+        }
+    </script>
+</body>
+</html>
